@@ -45,6 +45,10 @@ alias rghs="rg --hidden --smart-case" # rg -.S
 alias bg="batgrep"
 alias bghs="batgrep --hidden --smart-case" # bg --hidden -S
 
+alias gst="git status -sb"
+# Auto stage all changes and commit with a message
+alias gcm="git commit -am" 
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
