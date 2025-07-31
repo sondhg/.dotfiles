@@ -1,6 +1,9 @@
+tap "eth-p/software"
 tap "wezterm/wezterm-linuxbrew"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Bash scripts that integrate bat with various command-line tools
+brew "bat-extras"
 # More intuitive version of du in rust
 brew "dust"
 # Modern, maintained replacement for ls
@@ -15,10 +18,12 @@ brew "gcc"
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Command-line downloader for image-hosting site galleries and collections
-brew "gallery-dl"
+# GitHub command-line tool
+brew "gh"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
+# Distributed revision control system
+brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Tools and libraries to manipulate images in many formats

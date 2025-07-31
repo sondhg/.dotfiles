@@ -2,7 +2,7 @@
 
 ## Steps to bootstrap a new Linux PC
 
-1. Install Zsh and a terminal, preferably Wezterm
+1. Install: Zsh (`sudo apt install zsh`), a terminal (preferably Wezterm), and VLC (`sudo apt install vlc`)
 2. Clone repo into new hidden directory
 
 ```bash
