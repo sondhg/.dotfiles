@@ -37,11 +37,13 @@ alias cf-wezterm="code ~/.wezterm.lua"
 
 alias gdl="gallery-dl"
 alias lg="lazygit"
+alias cat="bat"
 alias ls="eza --icons=always --all --group-directories-first"
 alias et="eza --all --git-ignore --group-directories-first --tree"
 alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
 alias rghs="rg --hidden --smart-case" # rg -.S
-alias rghi="rg --hidden --ignore-case" # rg -.i
+alias bg="batgrep"
+alias bghs="batgrep --hidden --smart-case" # bg --hidden -S
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source <(fzf --zsh)
@@ -59,14 +61,10 @@ show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"
 }
 
-# Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
@@ -89,6 +87,9 @@ _fzf_comprun() {
 # Environment variables for ripgrep. Do not use quotes around the file path.
 export RIPGREP_CONFIG_PATH=~/.dotfiles/.ripgreprc
 
+# batman as replacement for man. Running "man" will use batman's syntax highlighting. However, "man" can't integrate with fzf selection like batman can.
+eval "$(batman --export-env)"
+
 # Yazi: cd to the current working directory of the yazi instance after quitting it.
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -108,13 +109,11 @@ bindkey '^[[3;5~' kill-word
 bindkey '^H' backward-kill-word
 # Ctrl+z to undo
 bindkey '^z' undo
-
 # Use Ctrl+P/Ctrl+N to search through history
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 source /home/linuxbrew/.linuxbrew/share/powerlevel10k/powerlevel10k.zsh-theme
-
 source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
