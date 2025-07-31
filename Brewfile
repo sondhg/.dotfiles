@@ -26,6 +26,8 @@ brew "ghostscript"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor

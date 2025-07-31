@@ -120,6 +120,13 @@
       "type": "wmtheme"
     },
     {
+      "key": "{$2}{#31}{icon} theme    ",
+      "type": "theme"
+    }, {
+      "key": "{$2}{#31}{icon} icons    ",
+      "type": "icons"
+    },
+    {
       "key": "{$2}{#32}{icon} battery  ",
       "type": "battery"
     },
