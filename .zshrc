@@ -48,6 +48,7 @@ alias bghs="batgrep --hidden --smart-case" # bg --hidden -S
 alias gst="git status -sb"
 # Auto stage all changes and commit with a message
 alias gcm="git commit -am" 
+alias gps="git push"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source <(fzf --zsh)
